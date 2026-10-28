@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Urban Leaves UAE shares practical home decor, kitchen essentials, and organisation ideas for everyday living.">
+  <meta name="theme-color" content="#234b3b">
+  <link rel="icon" type="image/png" href="urban-leaves-emblem.png">
+  <title>Urban Leaves UAE | Simple Ideas for Better Living</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --forest:#234b3b; --forest-dark:#17362a; --sage:#dce8dc;
+      --cream:#faf8f1; --paper:#fffefa; --ink:#24322b; --muted:#647168;
+      --terracotta:#c87958; --line:#e4e7dd; --shadow:0 12px 34px rgba(25,54,41,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 "DM Sans",Arial,sans-serif}
+    a{color:inherit}
+    .wrap{width:min(1120px,91%);margin-inline:auto}
+    .topbar{background:var(--forest-dark);color:#f5f3e9;text-align:center;padding:7px 12px;font-size:.79rem;letter-spacing:.06em}
+    header{background:rgba(255,254,250,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(10px)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font:700 1.45rem/1.1 "Playfair Display",Georgia,serif;letter-spacing:-.03em;text-decoration:none;color:var(--forest);flex-shrink:0}
+    .brand-emblem{display:block;width:66px;height:66px;object-fit:contain;flex-shrink:0}
+    .brand-copy{display:block}
+    .brand small{display:block;font:600 .64rem/1.6 "DM Sans",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+    nav{display:flex;align-items:center;gap:25px}
+    nav a{text-decoration:none;font-size:.91rem;font-weight:600}
+    nav a:hover{color:var(--terracotta)}
+    .navcta,.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;text-decoration:none;font-weight:700;background:var(--forest);color:#fffefa;border:1px solid var(--forest);transition:transform .2s,background .2s}
+    .navcta:hover,.button:hover{background:var(--forest-dark);transform:translateY(-1px)}
+    .hero{padding:68px 0 64px;background:linear-gradient(115deg,#e6eddf 0%,#f6f0e4 64%,#f2e0d2 100%);overflow:hidden}
+    .hero-grid{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;max-width:920px;margin:0 auto}
+    .hero-banner-logo{display:block;width:min(850px,100%);height:auto;object-fit:contain;margin:0 auto 4px}
+    .hero-grid .eyebrow{margin-top:0}
+    .hero-grid h1{margin:8px auto 12px}
+    .hero-grid p{margin-left:auto;margin-right:auto}
+    .hero-grid .trustline{justify-content:center}
+    .eyebrow{color:var(--forest);text-transform:uppercase;letter-spacing:.19em;font-size:.75rem;font-weight:700}
+    h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.14;letter-spacing:-.025em}
+    h1{font-size:clamp(2.7rem,5.6vw,4.65rem);font-weight:600;margin:15px 0 18px;max-width:690px}
+    h1 em{font-weight:500;color:var(--forest)}
+    .hero p{font-size:1.08rem;color:#536157;max-width:540px;margin:0 0 25px}
+    .hero-art{min-height:360px;position:relative;display:grid;place-items:center}
+    .sun{position:absolute;right:10%;top:3%;width:190px;height:190px;border-radius:50%;background:#e2b77b;opacity:.7}
+    .art-card{position:relative;width:min(355px,95%);height:310px;border-radius:180px 180px 26px 26px;background:linear-gradient(150deg,#95a78a,#466b51 63%,#294d3b);box-shadow:var(--shadow);overflow:hidden;display:flex;align-items:end;justify-content:center}
+    .plant-pot{position:absolute;bottom:16px;width:100px;height:100px;background:#c97d5a;clip-path:polygon(10% 0,90% 0,78% 100%,22% 100%);z-index:2}
+    .stem{position:absolute;bottom:95px;width:6px;background:#e0d6a6;border-radius:6px;transform-origin:bottom}
+    .leaf{position:absolute;width:65px;height:32px;background:#d9e0b4;border-radius:100% 0 100% 0;transform-origin:0 100%}
+    .leaf.l1{bottom:165px;left:49%;transform:rotate(-45deg)}.leaf.l2{bottom:195px;left:50%;transform:rotate(205deg) scale(.9)}
+    .leaf.l3{bottom:222px;left:50%;transform:rotate(-43deg) scale(.85)}.leaf.l4{bottom:250px;left:50%;transform:rotate(205deg) scale(.7)}
+    .leaf.l5{bottom:188px;left:50%;transform:rotate(-10deg) scale(.8);background:#a9c39b}
+    .art-caption{position:absolute;bottom:22px;left:22px;color:white;font:500 1.15rem "Playfair Display",Georgia,serif;z-index:3}
+    .trustline{display:flex;gap:18px;flex-wrap:wrap;margin-top:25px;color:#516056;font-size:.82rem}
+    .trustline span:before{content:"✓";color:var(--forest);font-weight:800;margin-right:7px}
+    section{padding:72px 0}
+    .sectionhead{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
+    h2{font-size:clamp(2rem,4vw,3rem);font-weight:600;margin:8px 0 10px}
+    .sectionhead p,.intro{max-width:620px;color:var(--muted);margin:0}
+    .categories{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+    .category{background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:27px;min-height:242px;box-shadow:0 4px 18px rgba(20,40,25,.025);transition:transform .2s,box-shadow .2s}
+    .category:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .iconbox{width:54px;height:54px;border-radius:16px;background:var(--sage);display:grid;place-items:center;font-size:1.7rem}
+    .category h3{font-size:1.45rem;margin:19px 0 8px}
+    .category p{color:var(--muted);font-size:.94rem;margin:0 0 18px}
+    .textlink{color:var(--forest);font-weight:700;text-decoration:none;border-bottom:1px solid #9eb2a2;padding-bottom:3px}
+    .guides{background:#fffefa}
+    .guidegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+    .guide{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:#fff}
+    .guidecover{height:155px;display:grid;place-items:center;font-size:3rem;background:linear-gradient(135deg,#e8eee2,#d2dfd2)}
+    .guide:nth-child(2) .guidecover{background:linear-gradient(135deg,#f4e4d2,#e6c7ab)}
+    .guide:nth-child(3) .guidecover{background:linear-gradient(135deg,#e3e8db,#b8c7b2)}
+    .guidebody{padding:22px}
+    .tag{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--terracotta);font-weight:700}
+    .guide h3{font-size:1.3rem;margin:9px 0}
+    .guide p{font-size:.92rem;color:var(--muted);margin:0 0 15px}
+    .aboutgrid{display:grid;grid-template-columns:.7fr 1.3fr;gap:45px;align-items:start}
+    .aboutmark{background:var(--forest);color:white;padding:32px;border-radius:20px;font:600 2rem/1.25 "Playfair Display",Georgia,serif;min-height:210px;display:flex;align-items:end}
+    .aboutcopy p{color:var(--muted)}
+    .disclosure{background:#edf1e8;border-block:1px solid #e0e6da}
+    .disclosurebox{max-width:850px}
+    .disclosure p{color:#536157}
+    footer{background:var(--forest-dark);color:#f6f4ec;padding:32px 0}
+    .footerrow{display:flex;justify-content:space-between;gap:24px;align-items:center;flex-wrap:wrap}
+    .footerbrand{font:600 1.3rem "Playfair Display",Georgia,serif}
+    footer p{font-size:.83rem;color:#d4dfd4;margin:6px 0}
+    footer a{color:#f6f4ec}
+    .tiny{font-size:.78rem;color:#d4dfd4}
+    @media(max-width:800px){.hero-banner-logo{width:min(700px,100%)}.brand-emblem{width:58px;height:58px}.categories,.guidegrid{grid-template-columns:1fr 1fr}.aboutgrid{grid-template-columns:1fr;gap:24px}.aboutmark{min-height:150px}}
+    @media(max-width:560px){.nav{padding:10px 0;align-items:center;flex-direction:row;flex-wrap:wrap}.brand{gap:8px;font-size:1.12rem}.brand-emblem{width:50px;height:50px}.brand small{font-size:.55rem;letter-spacing:.12em}.nav nav{gap:15px;flex-wrap:wrap}.navcta{display:none}.hero{padding:40px 0}.hero-banner-logo{width:100%;margin-bottom:7px}.hero-grid{gap:12px}.hero-grid h1{font-size:clamp(2.2rem,10vw,3.3rem)}section{padding:52px 0}.categories,.guidegrid{grid-template-columns:1fr}.sectionhead{align-items:start;flex-direction:column}.category{min-height:unset}}
+  </style>
+</head>
+<body>
+  <div class="topbar">THOUGHTFUL FINDS FOR EVERYDAY LIVING · UAE</div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="Urban Leaves UAE home"><img class="brand-emblem" src="urban-leaves-emblem.png" alt=""><span class="brand-copy">Urban Leaves<small>UAE · Home Decor</small></span></a>
+      <nav aria-label="Main navigation">
+        <a href="#categories">Explore</a><a href="#guides">Guides</a><a href="#about">About</a>
+      </nav>
+      <a class="navcta" href="#guides">Explore ideas ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <img class="hero-banner-logo" src="urban-leaves-header.png" alt="Urban Leaves Home Decor">
+        <div class="eyebrow">A calmer, cleverer home</div>
+        <h1>Small changes.<br><em>Beautiful living.</em></h1>
+        <p>Discover thoughtful ideas for home organisation, useful kitchen essentials and warm, welcoming spaces—curated for everyday life in the UAE.</p>
+        <a class="button" href="#categories">Find your inspiration <span aria-hidden="true">&nbsp; →</span></a>
+        <div class="trustline"><span>Practical ideas</span><span>Thoughtful choices</span><span>Everyday inspiration</span></div>
+      </div>
+    </section>
+
+    <section id="categories">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">Explore the collection</div><h2>Ideas for every corner</h2></div><p>Useful inspiration to help make your space feel more organised, comfortable and personal.</p></div>
+        <div class="categories">
+          <article class="category"><div class="iconbox" aria-hidden="true">🏡</div><h3>Home Decor</h3><p>Simple styling ideas, cosy corners, warm lighting and ways to make a space feel like home.</p><a class="textlink" href="#guides">Explore ideas →</a></article>
+          <article class="category"><div class="iconbox" aria-hidden="true">🍃</div><h3>Organised Living</h3><p>Decluttering tips, smart storage and small habits that make everyday routines easier.</p><a class="textlink" href="#guides">Explore ideas →</a></article>
+          <article class="category"><div class="iconbox" aria-hidden="true">🍽️</div><h3>Kitchen Essentials</h3><p>Practical buying guides for tools, food storage and useful items for home cooking.</p><a class="textlink" href="#guides">Explore ideas →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="guides" id="guides">
+      <div class="wrap">
+        <div class="sectionhead"><div><div class="eyebrow">The useful little details</div><h2>Our starter guides</h2></div><p>Before buying something new, learn which features matter and what to compare.</p></div>
+        <div class="guidegrid">
+          <article class="guide"><div class="guidecover" aria-hidden="true">🧺</div><div class="guidebody"><div class="tag">Organisation</div><h3>Storage that works for you</h3><p>Measure your space first, consider what needs storing, and choose items that are easy to access and maintain.</p><a class="textlink" href="#about">Read our approach →</a></div></article>
+          <article class="guide"><div class="guidecover" aria-hidden="true">🌿</div><div class="guidebody"><div class="tag">Home decor</div><h3>Create a cosy corner</h3><p>Combine comfortable textures, gentle lighting and a few meaningful objects to make a space feel welcoming.</p><a class="textlink" href="#about">Read our approach →</a></div></article>
+          <article class="guide"><div class="guidecover" aria-hidden="true">🥣</div><div class="guidebody"><div class="tag">Kitchen</div><h3>Choose useful kitchen tools</h3><p>Compare durability, ease of cleaning, storage needs and the tasks you actually do before purchasing.</p><a class="textlink" href="#about">Read our approach →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap aboutgrid">
+        <div class="aboutmark">Live simply.<br>Choose thoughtfully.</div>
+        <div class="aboutcopy"><div class="eyebrow">A little about us</div><h2>Welcome to Urban Leaves UAE</h2><p>We share practical inspiration for home decor, everyday organisation and kitchen essentials. Our goal is to help readers think clearly about what they need, compare options and make informed decisions.</p><p>This is a starter website. Before launch, add your own original articles, genuine product research, contact details and any applicable privacy information.</p></div>
+      </div>
+    </section>
+
+    <section class="disclosure" id="disclosure">
+      <div class="wrap disclosurebox"><div class="eyebrow">Clear and honest</div><h2>Affiliate disclosure</h2><p>Urban Leaves UAE does not currently contain active affiliate links and is not claiming approval from Amazon or any other affiliate programme. If we join an affiliate programme in the future, some links may earn us a commission from qualifying purchases at no additional cost to the reader. We will clearly disclose affiliate relationships and follow the applicable programme rules.</p></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footerrow"><div><div class="footerbrand">Urban Leaves UAE</div><p>Simple living, thoughtful choices.</p></div><div class="tiny">© 2026 Urban Leaves UAE · Starter website</div></div>
+  </footer>
+</body>
+</html>
